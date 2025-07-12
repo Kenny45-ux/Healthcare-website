@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Solid State by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			 @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+			 .features article {
+       flex: 1 1 280px;
+  border: 1px solid #146d30;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  color: #1a1a1a;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+  cursor: pointer; /* makes whole box feel clickable */
+  transition: all 0.3s ease;
+    }
+	.features article:hover {
+  transform: translateY(-6px) scale(1.02);
+  background-color: #f0fff0;
+  box-shadow: 0 12px 24px rgba(20, 109, 48, 0.25);
+  border-color: #0a5c28;
+	}
+
+    .features article:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .features article:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .features article:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .features article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(20, 109, 48, 0.2);
+    }
+
+    .features h3 {
+      color: #0c8a43;
+      margin-bottom: 1rem;
+    }
+
+    .features p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .features ul {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .features li {
+      margin: 0.5rem 0;
+    }
+
+    .button {
+      background-color: #146d30;
+      color: blue;
+      padding: 0.7rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-top: auto;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background-color: #0f5625;
+    }
+
+    .button.primary {
+      background-color: #0c8a43;
+    }
+
+    .button.primary:hover {
+      background-color: #076b32;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">MediConnect</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Dashboard</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#appointments">Book Appointment</a></li>
+					<li><a href="Plan.html">Plan</a></li>
+					<li><a href="#faq">FAQ</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="login.html">Log In</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Payment Plan</h2>
+								<p>Affordable care is our priority.</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<!-- Packages Section -->
+<section id="packages" class="wrapper alt style2">
+  <div class="inner">
+    <h2 class="major">Choose Your Plan</h2>
+    <div class="features" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; text-align: center;">
+
+      <article>
+    <h3>Free</h3>
+    <p>Get started with essential features:</p>
+    <ul>
+      <li>View available services</li>
+      <li>Send messages to clinic</li>
+    </ul>
+    <a href="#" class="button">Get Started</a>
+  </article>
+
+  <article>
+    <h3>Standard</h3>
+    <p>For regular users needing reminders:</p>
+    <ul>
+      <li>3 appointments per month</li>
+      <li>Email & SMS reminders</li>
+    </ul>
+    <a href="#" class="button primary">Choose Standard</a>
+  </article>
+
+  <article>
+    <h3>Premium</h3>
+    <p>Advanced care for dedicated users:</p>
+    <ul>
+      <li>Unlimited appointments</li>
+      <li>Telemedicine + AI Assistant</li>
+    </ul>
+    <a href="#" class="button primary">Go Premium</a>
+  </article>
+      </article>
+	  </div>
+	</div>
+</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>
+							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Untitled Inc<br />
+									1234 Somewhere Road Suite #2894<br />
+									Nashville, TN 00000-0000
+								</li>
+								<li class="icon solid fa-phone">(000) 000-0000</li>
+								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
+								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

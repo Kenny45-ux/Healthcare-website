@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+       <title>MediConnect | User Panel</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" /> 
+    </head>
+</html>
+
+<div class="login-container">
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 3rem auto;
+      padding: 2rem;
+      border: 1px solid #146d30;
+      border-radius: 10px;
+      background-color:	white;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 8px 20px rgba(20, 109, 48, 0.15);
+      color: #1a1a1a;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: #146d30;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    .login-container .checkbox-label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .login-container input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #146d30;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #0f5625;
+    }
+
+    .login-container .footer-links {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .login-container .footer-links a {
+      color: #0c8a43;
+      text-decoration: none;
+    }
+
+    .login-container .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <h2>User Login</h2>
+
+  <form action="login.php" method="POST">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+    <div class="checkbox-label">
+      <input type="checkbox" id="remember" name="remember">
+      <label for="remember">Remember me</label>
+    </div>
+
+    <button type="submit">Login</button>
+
+    <div class="footer-links">
+      <p>Don’t have an account? <a href="Signup.html">Register</a></p>
+      <p><a href="forgot-password.html">Forgot Password?</a></p>
+    </div>
+  </form>
+</div>
