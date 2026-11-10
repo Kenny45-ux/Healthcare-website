@@ -245,7 +245,7 @@ common way to get around software-installation controls.
 | File | Detail |
 |---|---|
 | `C:\Users\Charles Kingston\Pictures\vacation.zip` (17,130,603 B, modified 29 Mar 2022 07:42 UTC; MD5 1c2527b43e793294a61f6430e65269b4) | **Password-protected ZIP, AES-256 + Deflate.** Holds `vacation.jpg` (13,089,579 B) and `knossos.png` (4,082,607 B). Opened recently (`Recent\vacation.lnk` → `..\Pictures\vacation.zip`). |
-| `knossos.png` (inside the ZIP) | Candidate **steganographic carrier**. PNG is OpenStego's output format, and the file was created the same day OpenStego was used. See Part 3. |
+| `knossos.png` (inside the ZIP) | **Steganographic carrier (confirmed).** OpenStego extraction gives `hidden_message.txt`: "Interception point found (vacation.png). The convoy will pass the point at 16:00 GMT+1". See Part 3. |
 
 **b. BitLocker / VeraCrypt / TrueCrypt:**
 - **None.** No VeraCrypt or TrueCrypt programs, drivers or `.hc`/`.tc`

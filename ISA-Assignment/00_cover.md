@@ -38,10 +38,12 @@ Tools: Autopsy, The Sleuth Kit (fsstat, fls, istat, icat, ifind, mmls), libewf (
   - a **DJI drone photo** taken on **19 Feb 2022** at
     **35.330057 N, 24.998574 E**, in the hills west of Heraklion, showing a
     remote new road;
-  - **knossos.png**, a probable OpenStego carrier.
+  - **knossos.png**, an OpenStego carrier hiding the message **"Interception
+    point found (vacation.png). The convoy will pass the point at 16:00
+    GMT+1"**.
 - **Conclusion:** the evidence contradicts the tourist story and is
   consistent with espionage tradecraft.
 
-> **Screenshots:** terminal screenshots of every CLI step are included at the end of each part (Figures 1–24), and Autopsy screenshots of case AliceMalambo_2406344266 are Figures 25–42. The OpenStego GUI extraction of knossos.png is still to be done.
+> **Screenshots:** terminal screenshots of every CLI step are included at the end of each part (Figures 1–24), and Autopsy screenshots of case AliceMalambo_2406344266 are Figures 25–42.
 
 

@@ -94,41 +94,45 @@ satellite imagery (Esri World Imagery):
 
 | Image | Findings |
 |---|---|
-| **knossos.png** (1364×1600, 4.1 MB) | Looks like an ordinary tourist photo of the **North Entrance / Charging Bull fresco at the Palace of Knossos**. Several things make it suspicious: <br>• It is a **PNG**, the only lossless output format of OpenStego, and unusual for a camera photo. <br>• At 4.1 MB it is very large for its resolution. <br>• It has **no EXIF/camera metadata**, so it was re-saved by software. <br>• Its timestamp is 29 Mar 2022, the same day he searched for, downloaded and installed **OpenStego 0.8.4**. <br>• It was hidden inside the **AES-encrypted** archive together with the drone photo. <br>This is very likely the **steganographic carrier** holding a hidden message. |
+| **knossos.png** (1364×1600, 4.1 MB) | Looks like an ordinary tourist photo of the **North Entrance / Charging Bull fresco at the Palace of Knossos**. Several things make it suspicious: <br>• It is a **PNG**, the only lossless output format of OpenStego, and unusual for a camera photo. <br>• At 4.1 MB it is very large for its resolution. <br>• It has **no EXIF/camera metadata**, so it was re-saved by software. <br>• Its timestamp is 29 Mar 2022, the same day he searched for, downloaded and installed **OpenStego 0.8.4**. <br>• It was hidden inside the **AES-encrypted** archive together with the drone photo. <br>**Confirmed:** it is the **steganographic carrier** of the hidden message below. |
 | Other pictures on the laptop | Only Windows Store tile logos and three small Firefox new-tab thumbnails. Nothing of interest. |
 
-**How to check knossos.png on your workstation** (OpenStego is free):
+**OpenStego extraction: hidden message found (Figure 23).**
 
-1. Install OpenStego 0.8.4 (needs Java) from https://www.openstego.com.
-2. *Extract Data* → Input Stego File = `knossos.png`, Output Folder =
-   `AliceMalambo_2406344266/stego`.
-3. Leave the password **empty** first, then try the passwords from `pass.txt`.
-4. Take a screenshot of the result and report the extracted file and its
-   contents.
+The official OpenStego 0.8.4 release (the same version the suspect
+installed) was used:
 
-I tried the three passwords from `pass.txt` (archive, Facebook and email)
-from the command line, and none of them opened a payload. I could not test
-an empty password. **Run this step on your own PC.**
+```bash
+java -jar openstego-0.8.4/lib/openstego.jar extract -sf vacation/knossos.png -xd stego -p ''
+#  Extracted file: stego/hidden_message.txt
+cat stego/hidden_message.txt
+```
 
-For a quick visual check, view the least-significant-bit plane of
-`knossos.png` in StegSolve or https://aperisolve.com (for a local copy, use
-`zsteg`). Random noise in the LSBs of the top rows is the usual signature of
-OpenStego's RandomLSB algorithm.
+```
+Interception point found (vacation.png). The convoy will pass the point at 16:00 GMT+1
+```
 
-**Statistical LSB check (own Python/NumPy script, no third-party stego tool):**
-- In the smooth sky at the top of the image, 71 % of adjacent pixels share
-  the same LSB value. That is the natural pattern, and suggests no
-  sequential (top-down) LSB embedding.
-- Elsewhere the LSBs are about 50 % random, which is normal for a photo
-  derived from a JPEG.
-- The chi-square pairs-of-values test does not show the "evened-out"
-  histogram typical of heavy LSB embedding.
-- OpenStego's RandomLSB algorithm scatters a small payload across
-  pseudo-random pixels chosen by the password, so a short hidden message
-  would not be detectable this way.
-- The statistical check is therefore **inconclusive**. Extracting with
-  OpenStego (empty password, then the passwords from `pass.txt`) is the
-  definitive test.
+SHA-256 of `hidden_message.txt`:
+`ea07f671a2d2eb92f0012d50cd6320709d707c847dfa0e0816938b4fe9b69325`
+
+- `knossos.png` was a **steganographic carrier**. The message was embedded
+  with OpenStego and **no password** (OpenStego's GUI accepts an empty
+  password). Hiding it inside a tourist photo, inside an AES-encrypted ZIP,
+  was the concealment.
+- The message refers to the other picture:
+  - **`vacation.png/jpg`, the DJI drone photo at 35.330057 N, 24.998574 E,
+    is the "interception point"**, the remote paved road west of Heraklion
+    shown in Figures 20–22;
+  - **a convoy will pass that point at 16:00 GMT+1**.
+- This turns the case from tourism into **operational intelligence**. The
+  suspect scouted a location on a road with a drone and reported when a
+  convoy (probably military or government) would pass. He hid the report
+  with steganography and encryption, and e-mailed it to a ProtonMail
+  contact.
+
+(An earlier statistical LSB check with a custom script was inconclusive. As
+expected, a short RandomLSB payload cannot be detected statistically, which
+is why extraction with the tool itself was necessary.)
 
 **Exfiltration of the archive (found with Autopsy, Figures 24 and 40):**
 - An identical copy of the archive, `vacation[7].zip` (same MD5), is in the
@@ -136,8 +140,9 @@ OpenStego's RandomLSB algorithm.
 - The Mail store holds the accompanying message to
   **alison_choi@protonmail.com**: "here are some beautiful pictures … You
   will find them interesting".
-- The drone reconnaissance photo and the stego image were therefore sent to
-  a third party over ProtonMail, disguised as holiday photos.
+- The drone reconnaissance photo (the interception point) and the stego
+  image carrying the convoy timing were therefore sent to a third party over
+  ProtonMail, disguised as holiday photos.
 
 **Conclusion of Part 3:**
 - The "vacation" archive on the laptop is protected with a strong password,
@@ -145,26 +150,31 @@ OpenStego's RandomLSB algorithm.
   contains:
   - a **covert drone reconnaissance photo** of remote infrastructure west of
     Heraklion, with precise GPS;
-  - a tourist-looking **Knossos image that was very probably used as a
-    steganographic carrier** right after he installed OpenStego.
+  - a tourist-looking **Knossos image carrying a hidden OpenStego message**:
+    *"Interception point found (vacation.png). The convoy will pass the point
+    at 16:00 GMT+1"*.
+- He e-mailed the archive to alison_choi@protonmail.com as "holiday
+  pictures".
 - Together with the other evidence, this is strongly inconsistent with his
   claim of being a tourist and supports the suspicion of espionage:
   - the hotel searches;
   - his interest in military news (the F-35 article);
-  - the use of steganography and encryption;
+  - the use of steganography and encryption to report a convoy interception point and time;
   - the deliberate deletion of the password file.
 
 ### Image previews
 
 ![vacation.jpg (DJI FC3411, 19 Feb 2022, 35.330057 N 24.998574 E)](img/vacation_preview.jpg)
 
-![knossos.png (probable OpenStego carrier)](img/knossos_preview.jpg)
+![knossos.png (OpenStego carrier, hidden message extracted)](img/knossos_preview.jpg)
 
 ## Screenshots
 
 ![Figure 17: Part 3 Q1 - Decrypt vacation.zip with password from pass.txt](screenshots/17_p3q1_decrypt.png)
 
 ![Figure 18: Part 3 Q2/Q3 - Date and GPS location of vacation.jpg](screenshots/18_p3q2_exif.png)
+
+![Figure 23: Part 3 Q4 - OpenStego extraction of the hidden message from knossos.png](screenshots/23_p3q4_openstego.png)
 
 ![Figure 19: Part 3 Q4 - Other pictures: knossos.png metadata](screenshots/19_p3q4_knossos.png)
 
