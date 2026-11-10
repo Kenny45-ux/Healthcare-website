@@ -156,12 +156,15 @@ because the USB stick was hidden in his hotel room.
 
 | Check | Finding |
 |---|---|
-| i. Encrypted messaging (Signal, ProtonMail, Telegram, WhatsApp) | **None found.** No installs, no Prefetch, no AppData folders, no visits to these sites. Communication was through **Gmail** (kingston.charles17@gmail.com) and **Facebook**. |
+| i. Encrypted messaging (Signal, ProtonMail, Telegram, WhatsApp) | **Yes, ProtonMail.** No Signal, Telegram or WhatsApp apps are installed. However, the **Windows Mail app** store (`AppData\Local\Packages\microsoft.windowscommunicationsapps_8wekyb3d8bbwe\LocalState\HxStore.hxd`) contains a message from **kingston.charles17@gmail.com** to **alison_choi@protonmail.com** (the store is compressed, so the address appears as `a.l.i.s.o.n._.c.h.o.i.@.p.r.o.t..m.a.i.l...c.o.m`, with "on" stored as a back-reference): *"Hey Alison! I'm having a blast in Crete, here are some beautiful pictures that I recently took. You will find them interesting… Yours, Charlie"*. It has **vacation.zip attached**: `…\LocalState\Files\S0\6\Attachments\vacation[7].zip`, created 29 Mar 2022 07:57:52 UTC, MD5 1c2527b43e793294a61f6430e65269b4, **identical** to `Pictures\vacation.zip`. The recipient uses **ProtonMail**, an end-to-end-encrypted service based in Switzerland. Ordinary Gmail and Facebook accounts were also used. |
 | ii. Steganography / encryption searches | **Yes.** Firefox search **"openstego"** (15:04:13). Visits to openstego.com and the GitHub releases page. Download of `Setup-OpenStego-0.8.4.exe` (in `Downloads`, Firefox download annotation, Zone.Identifier). Prefetch files `SETUP-OPENSTEGO-0.8.4.EXE-E44648D2.pf` / `.TMP-43D9A23D.pf` prove it ran. The program was installed per-user to `AppData\Local\Programs\OpenStego`. He also created an **AES-256-encrypted ZIP** (`Pictures\vacation.zip`). |
 | iii. Dark web / anonymity tools | **None found.** No Tor Browser, no `.onion` URLs, no VPN or proxy software. |
 
 Conclusion: the evidence supports the suspicion that he was trained in
-*hiding data in plain sight*. He combined **steganography (OpenStego)**,
+*hiding data in plain sight* and was **passing it to a handler**. Only
+15 minutes after creating the AES-encrypted `vacation.zip` (07:42 UTC), he
+attached it to a harmless-looking "holiday pictures" email to a
+**ProtonMail** contact (07:57 UTC). He also combined **steganography (OpenStego)**,
 **strong archive encryption** and **anti-forensic deletion** (the password
 file was "deleted" on the USB stick). He used ordinary mainstream services
 (Gmail, Facebook, a tourist-looking "vacation" archive) as cover, instead of
@@ -285,6 +288,8 @@ common way to get around software-installation controls.
 
 ## Screenshots
 
+![Figure 24: Part 1 Q4 - vacation.zip e-mailed to alison_choi@protonmail.com (Windows Mail store)](screenshots/24_p1q4_mail_exfil.png)
+
 ![Figure 1: Workstation / case folder setup](screenshots/01_setup.png)
 
 ![Figure 2: Part 1 Q1 - E01 metadata](screenshots/02_p1q1_ewfinfo.png)
@@ -302,3 +307,41 @@ common way to get around software-installation controls.
 ![Figure 8: Part 1 Q5 - Installed programs (no AnyDesk/TeamViewer/VeraCrypt/Tor/VPN)](screenshots/08_p1q5_programs.png)
 
 ![Figure 9: Part 1 Q6 - Encrypted archive found](screenshots/09_p1q6_encrypted.png)
+
+### Autopsy screenshots
+
+![Figure 25: Autopsy - New case AliceMalambo_2406344266, examiner Alice Malambo](screenshots/autopsy/au01_case_info.png)
+
+![Figure 26: Autopsy - Adding laptop.E01 as disk image data source](screenshots/autopsy/au02_add_source.png)
+
+![Figure 27: Autopsy - Ingest modules selected](screenshots/autopsy/au03_ingest.png)
+
+![Figure 28: Autopsy - Operating System Information (Q2)](screenshots/autopsy/au04_os_info.png)
+
+![Figure 29: Autopsy - OS Accounts: Charles Kingston (RID 1001) (Q2)](screenshots/autopsy/au05_os_accounts.png)
+
+![Figure 30: Autopsy - Web History (Q3)](screenshots/autopsy/au07_web_history.png)
+
+![Figure 31: Autopsy - Web History: Google Maps hotel searches (Q3b)](screenshots/autopsy/au07b_web_history_hotels.png)
+
+![Figure 32: Autopsy - Web History: Galaxy Hotel Iraklio and directions to Knossos (Q3b)](screenshots/autopsy/au07c_web_history_directions.png)
+
+![Figure 33: Autopsy - Web Search terms incl. "openstego" (Q4)](screenshots/autopsy/au08_web_search.png)
+
+![Figure 34: Autopsy - Web Downloads: Setup-OpenStego-0.8.4.exe (Q4/Q5)](screenshots/autopsy/au09_web_downloads.png)
+
+![Figure 35: Autopsy - Web Form Autofill: e-mail / Facebook accounts](screenshots/autopsy/au10_web_form_autofill.png)
+
+![Figure 36: Autopsy - Installed Programs (Q5)](screenshots/autopsy/au06_installed_programs.png)
+
+![Figure 37: Autopsy - Run Programs (Q5)](screenshots/autopsy/au15_run_programs.png)
+
+![Figure 38: Autopsy - Recent Documents: vacation.lnk](screenshots/autopsy/au11_recent_documents.png)
+
+![Figure 39: Autopsy - Encryption Suspected (Q6)](screenshots/autopsy/au12_encryption.png)
+
+![Figure 40: Autopsy - Archives: vacation.zip and vacation[7].zip (Mail attachment) (Q6)](screenshots/autopsy/au17_vacation7_zip.png)
+
+![Figure 41: Autopsy - EXIF Metadata](screenshots/autopsy/au13_exif.png)
+
+![Figure 42: Autopsy - USB Device Attached](screenshots/autopsy/au14_usb.png)

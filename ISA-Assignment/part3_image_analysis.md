@@ -130,6 +130,15 @@ OpenStego's RandomLSB algorithm.
   OpenStego (empty password, then the passwords from `pass.txt`) is the
   definitive test.
 
+**Exfiltration of the archive (found with Autopsy, Figures 24 and 40):**
+- An identical copy of the archive, `vacation[7].zip` (same MD5), is in the
+  **Windows Mail attachments folder**.
+- The Mail store holds the accompanying message to
+  **alison_choi@protonmail.com**: "here are some beautiful pictures … You
+  will find them interesting".
+- The drone reconnaissance photo and the stego image were therefore sent to
+  a third party over ProtonMail, disguised as holiday photos.
+
 **Conclusion of Part 3:**
 - The "vacation" archive on the laptop is protected with a strong password,
   and that password was hidden on a USB stick in his hotel room. The archive

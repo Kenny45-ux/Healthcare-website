@@ -26,7 +26,10 @@ Tools: Autopsy, The Sleuth Kit (fsstat, fls, istat, icat, ifind, mmls), libewf (
   Knossos. He focused on **Galaxy Hotel Iraklio**, and planned a route from
   there to Knossos. He read about an F-35 military deal. Then he searched
   for, downloaded and installed the steganography tool **OpenStego 0.8.4**.
-- **No VPN, Tor, encrypted messengers, remote-access tools or
+- **Exfiltration:** at 07:57 UTC he attached `vacation.zip` to an email
+  to **alison_choi@protonmail.com** in the Windows Mail app ("pictures …
+  you will find them interesting").
+- **No VPN, Tor, encrypted messaging apps, remote-access tools or
   VeraCrypt/BitLocker volumes** were found.
 - **USB drive:** a "deleted" `pass.txt` was recovered by editing the FAT32
   directory entry. It holds his Facebook, e-mail and **archive** passwords.
@@ -39,6 +42,6 @@ Tools: Autopsy, The Sleuth Kit (fsstat, fls, istat, icat, ifind, mmls), libewf (
 - **Conclusion:** the evidence contradicts the tourist story and is
   consistent with espionage tradecraft.
 
-> **Screenshots:** terminal screenshots of every CLI step are included at the end of each part (Figures 1–22). Autopsy GUI and OpenStego GUI screenshots must be added from a desktop session.
+> **Screenshots:** terminal screenshots of every CLI step are included at the end of each part (Figures 1–24), and Autopsy screenshots of case AliceMalambo_2406344266 are Figures 25–42. The OpenStego GUI extraction of knossos.png is still to be done.
 
 
