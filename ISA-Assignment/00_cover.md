@@ -39,8 +39,6 @@ Tools: Autopsy, The Sleuth Kit (fsstat, fls, istat, icat, ifind, mmls), libewf (
 - **Conclusion:** the evidence contradicts the tourist story and is
   consistent with espionage tradecraft.
 
-> **Screenshots:** insert a screenshot of your own workstation under each
-> command or Autopsy view. Your username, case folder and case name must
-> show `AliceMalambo_2406344266`.
+> **Screenshots:** terminal screenshots of every CLI step are included at the end of each part (Figures 1–19). Autopsy GUI, Google Maps and OpenStego screenshots must be added from a desktop session.
 
-\newpage
+

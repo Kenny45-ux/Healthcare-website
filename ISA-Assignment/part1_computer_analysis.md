@@ -282,3 +282,23 @@ common way to get around software-installation controls.
 - **Secure disposal:** NIST SP 800-88 sanitisation of media (see Part 2 Q7).
 - **Regular audit and review** of encryption coverage and key escrow
   (NIST CSF PR.DS-1/PR.DS-2, CIS Control 3).
+
+## Screenshots
+
+![Figure 1: Workstation / case folder setup](screenshots/01_setup.png)
+
+![Figure 2: Part 1 Q1 - E01 metadata](screenshots/02_p1q1_ewfinfo.png)
+
+![Figure 3: Part 1 Q1 - Verify MD5/SHA1 of laptop image](screenshots/03_p1q1_ewfverify.png)
+
+![Figure 4: Part 1 - Partition table (no BitLocker/VeraCrypt)](screenshots/04_p1_mmls.png)
+
+![Figure 5: Part 1 Q2 - User accounts and Administrators group](screenshots/05_p1q2_users.png)
+
+![Figure 6: Part 1 Q3 - Firefox history: Google Maps hotel searches](screenshots/06_p1q3_history.png)
+
+![Figure 7: Part 1 Q4/Q5 - Steganography search, download and execution](screenshots/07_p1q4_openstego.png)
+
+![Figure 8: Part 1 Q5 - Installed programs (no AnyDesk/TeamViewer/VeraCrypt/Tor/VPN)](screenshots/08_p1q5_programs.png)
+
+![Figure 9: Part 1 Q6 - Encrypted archive found](screenshots/09_p1q6_encrypted.png)

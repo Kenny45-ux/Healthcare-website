@@ -126,3 +126,11 @@ OpenStego's RandomLSB algorithm.
 ![vacation.jpg (DJI FC3411, 19 Feb 2022, 35.330057 N 24.998574 E)](img/vacation_preview.jpg)
 
 ![knossos.png (probable OpenStego carrier)](img/knossos_preview.jpg)
+
+## Screenshots
+
+![Figure 17: Part 3 Q1 - Decrypt vacation.zip with password from pass.txt](screenshots/17_p3q1_decrypt.png)
+
+![Figure 18: Part 3 Q2/Q3 - Date and GPS location of vacation.jpg](screenshots/18_p3q2_exif.png)
+
+![Figure 19: Part 3 Q4 - Other pictures: knossos.png metadata](screenshots/19_p3q4_knossos.png)

@@ -256,3 +256,19 @@ References:
 4. IEEE Std 2883-2022, *Standard for Sanitizing Storage*.
 5. Carrier B., *File System Forensic Analysis*, Addison-Wesley, 2005 (Ch. 9–10, FAT).
 6. Gutmann P., "Secure Deletion of Data from Magnetic and Solid-State Memory", USENIX Security 1996 (and its epilogue noting the 35 passes are unnecessary for modern drives).
+
+## Screenshots
+
+![Figure 10: Part 2 - Thumbdrive hash verification](screenshots/10_p2_hash.png)
+
+![Figure 11: Part 2 Q1 - fsstat](screenshots/11_p2q1_fsstat.png)
+
+![Figure 12: Part 2 Q2 - Extract first sector of root directory](screenshots/12_p2q2_rootdir.png)
+
+![Figure 13: Part 2 Q3 - Modify directory entry (0xE5 -> 0x50 'P')](screenshots/13_p2q3_undelete.png)
+
+![Figure 14: Part 2 Q4 - Extract FAT 0 and set cluster chain (FAT[3]=EOF)](screenshots/14_p2q4_fat.png)
+
+![Figure 15: Part 2 Q5 - Recreate image with modified root directory](screenshots/15_p2q5_rebuild.png)
+
+![Figure 16: Part 2 Q6 - Verify recovery and hash recovered file](screenshots/16_p2q6_verify.png)
