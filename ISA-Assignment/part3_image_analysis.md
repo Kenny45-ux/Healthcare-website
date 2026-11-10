@@ -115,6 +115,21 @@ For a quick visual check, view the least-significant-bit plane of
 `zsteg`). Random noise in the LSBs of the top rows is the usual signature of
 OpenStego's RandomLSB algorithm.
 
+**Statistical LSB check (own Python/NumPy script, no third-party stego tool):**
+- In the smooth sky at the top of the image, 71 % of adjacent pixels share
+  the same LSB value. That is the natural pattern, and suggests no
+  sequential (top-down) LSB embedding.
+- Elsewhere the LSBs are about 50 % random, which is normal for a photo
+  derived from a JPEG.
+- The chi-square pairs-of-values test does not show the "evened-out"
+  histogram typical of heavy LSB embedding.
+- OpenStego's RandomLSB algorithm scatters a small payload across
+  pseudo-random pixels chosen by the password, so a short hidden message
+  would not be detectable this way.
+- The statistical check is therefore **inconclusive**. Extracting with
+  OpenStego (empty password, then the passwords from `pass.txt`) is the
+  definitive test.
+
 **Conclusion of Part 3:**
 - The "vacation" archive on the laptop is protected with a strong password,
   and that password was hidden on a USB stick in his hotel room. The archive
