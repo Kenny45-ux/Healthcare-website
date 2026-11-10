@@ -39,6 +39,6 @@ Tools: Autopsy, The Sleuth Kit (fsstat, fls, istat, icat, ifind, mmls), libewf (
 - **Conclusion:** the evidence contradicts the tourist story and is
   consistent with espionage tradecraft.
 
-> **Screenshots:** terminal screenshots of every CLI step are included at the end of each part (Figures 1–19). Autopsy GUI, Google Maps and OpenStego screenshots must be added from a desktop session.
+> **Screenshots:** terminal screenshots of every CLI step are included at the end of each part (Figures 1–22). Autopsy GUI and OpenStego GUI screenshots must be added from a desktop session.
 
 

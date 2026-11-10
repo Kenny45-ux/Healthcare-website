@@ -76,10 +76,19 @@ Interpretation:
 - Crete hosts important NATO and Greek military installations, so
   infrastructure imagery from the island is of interest to foreign services.
 
-*(When you take the screenshot, compare the Google satellite view with the
-photo: match the curved paved road and the dirt tracks to confirm the
-location. Mention in your report what Google labels the area or nearest
-village.)*
+**Map confirmation (Figures 20–22).** The GPS coordinates were plotted on
+satellite imagery (Esri World Imagery):
+- **Figure 20** places the point in the hills of the Malevizi area, **about
+  6 km west of Gazi and 13 km west of Heraklion (Iraklio) city centre**.
+- **Figure 21** shows the same scene as the drone photo:
+  - the curved **paved road** running east–west;
+  - the **parallel oval dirt tracks** just south of it;
+  - the **small white building** at the western end of the tracks;
+  - the barren limestone hillside to the north.
+- This confirms that `vacation.jpg` was taken by a drone hovering over this
+  spot, looking at the road.
+- Alternative: Google Maps,
+  https://www.google.com/maps?q=35.330057,24.998574 (Satellite view).
 
 ## 4. Other pictures
 
@@ -134,3 +143,10 @@ OpenStego's RandomLSB algorithm.
 ![Figure 18: Part 3 Q2/Q3 - Date and GPS location of vacation.jpg](screenshots/18_p3q2_exif.png)
 
 ![Figure 19: Part 3 Q4 - Other pictures: knossos.png metadata](screenshots/19_p3q4_knossos.png)
+
+![Figure 20: Map – region (vacation.jpg GPS point west of Heraklion)](screenshots/20_p3q3_map_region.png)
+
+![Figure 21: Map – satellite view matching the drone photo](screenshots/21_p3q3_map_satellite.png)
+
+![Figure 22: Map – close-up of the GPS point and road](screenshots/22_p3q3_map_closeup.png)
+
