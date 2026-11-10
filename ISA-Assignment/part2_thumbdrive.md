@@ -1,11 +1,11 @@
 # Part 2 – FAT Analysis and File Recovery (thumbdrive.img)
 
-> Student: Alice Malambo. Re-run every command on your own workstation (case folder `~/AliceMalambo_case`) and take a screenshot of each command + output.
+> Student: Alice Malambo. Re-run every command on your own workstation (case folder `~/AliceMalambo_2406344266`) and take a screenshot of each command + output.
 
 ## 0. Setup and integrity check
 
 ```bash
-mkdir ~/AliceMalambo_case && cd ~/AliceMalambo_case
+mkdir ~/AliceMalambo_2406344266 && cd ~/AliceMalambo_2406344266
 md5sum thumbdrive.img
 sha256sum thumbdrive.img
 ```
@@ -177,11 +177,11 @@ used.
 ## 6. Mount and verify
 
 ```bash
-sudo mkdir -p /mnt/AliceMalambo_usb
-sudo mount -o loop,ro thumbdrive_recovered.img /mnt/AliceMalambo_usb
-ls -la /mnt/AliceMalambo_usb
-cat /mnt/AliceMalambo_usb/pass.txt
-sha256sum /mnt/AliceMalambo_usb/pass.txt
+sudo mkdir -p /mnt/AliceMalambo_2406344266_usb
+sudo mount -o loop,ro thumbdrive_recovered.img /mnt/AliceMalambo_2406344266_usb
+ls -la /mnt/AliceMalambo_2406344266_usb
+cat /mnt/AliceMalambo_2406344266_usb/pass.txt
+sha256sum /mnt/AliceMalambo_2406344266_usb/pass.txt
 ```
 
 (Verified here with `fls -p thumbdrive_recovered.img` and
